@@ -24,7 +24,7 @@ int main()
         }
     }
     n--;
-    printf("after delection output array is ");
+    printf("After delection output array is ");
     for (int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);

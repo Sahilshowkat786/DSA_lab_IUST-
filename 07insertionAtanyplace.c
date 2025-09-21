@@ -12,19 +12,25 @@ int main()
     {
         scanf("%d", &arr[i]);
     }
+
+    // input position and element
     printf("position of inserton (1 to %d) = ", n + 1);
     scanf("%d", &position);
 
     printf("inserting element = ");
     scanf("%d", &element);
 
-    printf("after inserting output array is =");
+    // right shift
+
     for (int i = n; i >= position; i--)
     {
         arr[i] = arr[i - 1];
     }
+
     arr[position - 1] = element;
     n++;
+    
+    printf("after inserting output array is =");
 
     for (int i = 0; i < n; i++)
     {
