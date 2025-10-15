@@ -144,23 +144,26 @@ void deletebeg()
 // case 02
 void deletend()
 {
-    struct node *newnode, *temp, *ptr; // ptr is aaga wala pointer
+    struct node *newnode, *temp, *ptr; // ptr = previous node
     temp = head;
-    if(head == NULL) // important
+
+    if (head == NULL) // case 1: empty list
     {
         printf("List is empty\n");
         return;
     }
 
-    ptr = head->next;
-    while (temp != NULL) 
+    while (temp->next != NULL)  // traverse till last node
     {
-        temp = temp->next;
+        ptr = temp;              // store current as previous
+        temp = temp->next;       // move to next
     }
-    // logic
-    ptr->next = NULL;
-    free(temp);
+
+    // now temp = last node, ptr = second last node
+    ptr->next = NULL;            // disconnect last node
+    free(temp);                  // free memory of last node
 }
+
 // case 03
 void deleteatanyplace()
 {
@@ -235,4 +238,5 @@ int main()
             printf("enter valid option\n");
         }
     } while (choice != 9);
+
 }
